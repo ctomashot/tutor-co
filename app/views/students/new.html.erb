@@ -1,0 +1,26 @@
+<ul>
+<% if @student.errors.any? %>
+<h3> Errors: </h3>
+<% @student.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    <% end %>
+   </ul>
+
+
+<h2> Register new student form </h2>
+
+
+<%= form_for @student do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :grade %>
+    <%= f.select :grade, ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th", "College Freshman", "College Sophomore", "College Junior", "College Senior"], prompt: true %>
+    <br>
+    <%= f.label :location %>
+    <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
+    <br></br>
+    <%= f.submit %>
+    <% end %>
+    <br>

@@ -1,0 +1,30 @@
+<ul>
+<% if @reservation.errors.any? %>
+<h3> Errors: </h3>
+<% @reservation.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    <% end %>
+   </ul>
+
+
+<h2> Edit your existing reservation</h2>
+
+
+<%= form_for @reservation do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <br>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+    <br>
+    <%= f.label :instructor_and_subject%>
+    <%= f.collection_select :instructor_id, Instructor.all, :id, :instructor_subject, prompt: true %>
+    <br>
+    <br>
+    <%= f.label :room %>
+    <%= f.collection_select :room_id, Room.all, :id, :number, prompt: true %>
+    <br></br>
+    <%= f.submit %>
+    <% end %>
+    <br>

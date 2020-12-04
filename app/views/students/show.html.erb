@@ -1,0 +1,29 @@
+<h3><%= @student.name %>'s show page!</h3>
+<h3>I am studying in <%=@student.location.name%> </h3>
+
+<h3>Your reservations</h3>
+
+<ol>
+<% @student.reservations.select do |reservation| %>
+    <li>
+    <ul>
+    <li> Instructor: <%=reservation.instructor.name%></li>
+    <li> Location: <%=reservation.student.location.name%></li>
+    <li>Date: <%=reservation.date%></li>
+    <li>Time: <%=reservation.time%></li>
+    <li>Room Number: <%=reservation.room_id%></li>
+    <br></br>
+    <%= button_to "Cancel Reservation", reservation_path(reservation), method: :delete %>
+    <br>
+    <%= button_to "Edit Reservation", edit_reservation_path(reservation)%>
+    
+    </ul>
+    </li>
+    <br>
+    <% end %>
+    </ol>
+
+
+    <%= link_to "Book a new tutoring session!", new_reservation_path %>
+    <br>
+    <%= link_to "Edit Profile", edit_student_path %>

@@ -1,0 +1,20 @@
+<h2>Subjects we offer tutoring in:</h2>
+
+<% subjects = @instructors.map do |instructor|%>
+    <%instructor.subject %>
+    <% end %>
+
+<ul>
+<% subjects.uniq.each do |subject| %>
+    <li><%= subject%></li>
+    <ul>
+    Instructors who teach my subject:
+    <%@instructors.each do |instructor|%>
+        <%if instructor.subject == subject%>
+           <li> <%=link_to instructor.name, instructor_path(instructor) %></li>
+       <% end%>
+    <%end%>
+
+    </ul>
+    <% end %>
+</ul>

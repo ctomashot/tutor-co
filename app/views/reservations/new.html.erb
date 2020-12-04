@@ -1,0 +1,31 @@
+<ul>
+<% if @reservation.errors.any? %>
+<h3> Errors: </h3>
+<% @reservation.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    <% end %>
+   </ul>
+
+
+<h2> Create a new reservation</h2>
+
+
+<%= form_for @reservation do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <br>
+    <%= f.label :time %>
+    <%= f.select :time, ["9:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM", "12:00PM", "12:30PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM", "4:30PM" ], prompt: true %>
+    <br>
+    <%= f.label :instructor_and_subject%>
+    <br>
+    <%= f.collection_select :instructor_id, Instructor.all, :id, :instructor_subject, prompt: true %>
+    <br>
+    <br>
+    <%= f.label :room %>
+    <%= f.collection_select :room_id, Room.all, :id, :number, prompt: true %>
+    <br></br>
+    <%= f.submit %>
+    <% end %>
+    <br>
