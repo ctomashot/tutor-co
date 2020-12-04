@@ -1,9 +1,10 @@
 class StudentsController < ApplicationController
+    before_action :authorized, except: [:new, :create]
 
     def show
         @student = Student.find(params[:id])
-    end
-
+    end    
+   
     def new
         @student = Student.new
     end
@@ -11,6 +12,7 @@ class StudentsController < ApplicationController
     def create
         @student = Student.new(student_params)
         if @student.save
+            session[:student_id] = @student.id
             redirect_to student_path(@student)
         else
             render :new
@@ -34,6 +36,11 @@ class StudentsController < ApplicationController
     private
 
     def student_params
-        params.require(:student).permit(:name, :grade, :location_id)
+        params.require(:student).permit(:name, :username, :grade, :location_id, :password, :password_confirmation)
+    end
+
+   
+    def authorized
+        redirect_to login_path unless session[:student_id]
     end
 end

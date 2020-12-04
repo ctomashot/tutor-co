@@ -7,9 +7,11 @@ class ReservationsController < ApplicationController
     end
 
     def create
+        @student = Student.find(params[:id])
         @reservation = Reservation.new(reservation_params)
+        @reservation.student_id = @student.id
         if @reservation.save
-            redirect_to student_path(@reservation.student_id)
+            redirect_to student_path(@student)
         else
             render :new
         end
@@ -39,6 +41,6 @@ class ReservationsController < ApplicationController
     private
      
     def reservation_params
-        params.require(:reservation).permit(:date, :time, :instructor_id, :room_id)
+        params.require(:reservation).permit(:date, :time, :student_id, :instructor_id, :room_id)
     end
 end

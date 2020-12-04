@@ -4,9 +4,7 @@ class Student < ApplicationRecord
     has_many :rooms, through: :reservations
     belongs_to :location
 
-
     validates :name, :grade, :location, presence: true
-
-
+    has_secure_password
 
 end
