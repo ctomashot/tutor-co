@@ -1,8 +1,10 @@
 class StudentsController < ApplicationController
-    before_action :authorized, except: [:new, :create]
+    layout "sessions"
+    skip_before_action :authorize, only: [:new, :create, :homepage]
 
     def show
-        @student = Student.find(params[:id])
+        @student = current_user
+        render :layout => "students"
     end    
    
     def new
@@ -32,6 +34,10 @@ class StudentsController < ApplicationController
         end
     end
 
+    def homepage
+        render :layout => "application"
+        
+    end
 
     private
 
@@ -39,8 +45,4 @@ class StudentsController < ApplicationController
         params.require(:student).permit(:name, :username, :grade, :location_id, :password, :password_confirmation)
     end
 
-   
-    def authorized
-        redirect_to login_path unless session[:student_id]
-    end
 end

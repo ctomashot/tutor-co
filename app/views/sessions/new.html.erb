@@ -1,6 +1,7 @@
 Login Page 
 
-<%= form_tag '/login' do %>
+<%= form_tag new_session_path do %>
+
     <%= label_tag "Username" %>
     <%= text_field_tag :username %>
     <%= label_tag "Password" %>
@@ -8,3 +9,5 @@ Login Page
   
     <%= submit_tag "Sign In"%>
   <% end %>
+
+<%= button_to "Homepage", root_path, method: :get %>

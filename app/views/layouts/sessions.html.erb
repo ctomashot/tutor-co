@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TutorCo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-inverse">
+  
+
+    <ul class="navbar-nav ml-auto">
+        <% if @student %>
+        <li><%= button_to "Logout", sessions_path, method: :delete %><span class="glyphicon glyphicon-user"></span></li>
+        <% else %>
+        <li><%= button_to "Login", login_path, method: :get %><span class="glyphicon glyphicon-user"></span></li>
+        <% end %>
+    </ul>
+
+</nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+     <a class="navbar-brand" href="/">TutorCo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/locations">Locations</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/subjects">Subjects</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/instructors">Instructors</a>
+    </li>
+    <a class="nav-link" href="/students/:id">My Profile</a>
+    </li>
+  </ul>
+</nav>
+    <%= yield %>
+  </body>
+</html>

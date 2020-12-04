@@ -1,4 +1,7 @@
 class InstructorsController < ApplicationController
+     layout "sessions"
+    
+    
 
     def index
         @instructors= Instructor.all
@@ -10,6 +13,7 @@ class InstructorsController < ApplicationController
 
     def show
         @instructor = Instructor.find(params[:id])
+        render :layout => "instructors"
     end
 
 

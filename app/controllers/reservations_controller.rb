@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+     layout "sessions"
 
 
     def new
@@ -7,9 +7,8 @@ class ReservationsController < ApplicationController
     end
 
     def create
-        @student = Student.find(params[:id])
-        @reservation = Reservation.new(reservation_params)
-        @reservation.student_id = @student.id
+        updated_reservation = reservation_params.merge(student_id: current_user.id)
+        @reservation = Reservation.new(updated_reservation)
         if @reservation.save
             redirect_to student_path(@student)
         else

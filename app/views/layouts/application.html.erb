@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>TutorCo</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <% if @student %>
+      <%= button_to "Logout", sessions_path, method: :delete %>
+      <% else %>
+      <%= button_to "Login", login_path, method: :get %>
+      <% end %>
+        <%= yield %>
+    </div>
   </body>
 </html>
