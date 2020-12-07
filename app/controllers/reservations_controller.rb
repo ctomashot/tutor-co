@@ -10,6 +10,8 @@ class ReservationsController < ApplicationController
 
     def create
         updated_reservation = reservation_params.merge(student_id: current_user.id)
+        @my_instructor = Instructor.where(location_id: current_user.location_id)
+        @my_instructor.name 
         @reservation = Reservation.new(updated_reservation)
         if @reservation.save
             redirect_to student_path(@student)

@@ -8,17 +8,18 @@
 </div>
 <br>
 <div class="text-secondary">
-<h5><p> Our instructors are specially trained in their area of expertise, and will help bring your or your child's academic dreams come true... </p></h5>
+<h5><strong><p> Our instructors are specially trained in their area of expertise.</p>
+<p> Each instructor will help bring you or your child's academic dreams come true... </p><strong></h5>
 <br>
 <div class="text-center">
-<h5>Instructor of the Month:
+<u><h5>Instructor of the Month:</u>
 <%=Instructor.instructor_of_the_month.name%></h5>
 <br></br>
 </div>
 
 <ol>
 <% @instructors.each do |instructor| %>
-    <li><%= link_to instructor.name, instructor_path(instructor)%> who teaches,
+    <li><%= link_to instructor.name, instructor_path(instructor), style: "color: grey;"%> who teaches,
     <%= instructor.subject %></li>
     <br></br>
     <% end %>

@@ -11,18 +11,20 @@
 <br>
 <div class="text-secondary">
 <ul>
+<strong>
 <%@locations.each do |location| %>
     <li><%= location.name %></li>
     <ul>
     Instructors in this location:
     <%@instructors.each do |instructor|%>
         <%if instructor.location == location%>
-           <li> <%=link_to instructor.name, instructor_path(instructor) %></li>
+           <li> <%=link_to instructor.name, instructor_path(instructor), style: "color: grey;"%></li>
        <% end%>
     <%end%>
     </ul>
     <br>
     <% end %>
     </ul>
+    </strong>
     </div>
   

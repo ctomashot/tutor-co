@@ -6,8 +6,8 @@ class Reservation < ApplicationRecord
     validates :date, :time, :instructor_id, :room_id, presence: true
     validates :date, timeliness: { on_or_after: lambda { Date.current }, type: :date }
   
-   validates :time, uniqueness: { scope: [:date, :room_id] }
 
+   validates :room_id, uniqueness: { scope: [:time, :date], message: "has already been taken for that time slot." }
 
 
 end

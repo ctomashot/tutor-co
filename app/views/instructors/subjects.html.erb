@@ -9,19 +9,22 @@
     <%instructor.subject %>
     <% end %>
 <h5>
+<strong>
 <ul>
 <% subjects.uniq.each do |subject| %>
     <li><%= subject%>, taught by:</li>
     <ul>
-    <%@instructors.each do |instructor|%>
+    <h6><%@instructors.each do |instructor|%>
         <%if instructor.subject == subject%>
-           <li> <%=link_to instructor.name, instructor_path(instructor) %></li>
+           <li> <%=link_to instructor.name, instructor_path(instructor), style: "color: grey;"%></li>
        <% end%>
     <%end%>
     <br>
+    </h6>
     </ul>
     <% end %>
     </ul>
     <br>
+    </strong>
     </h5>
     </div>
