@@ -1,24 +1,43 @@
-# README
+# Link to Demo Video
+*  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Tutor co
 
-Things you may want to cover:
+Tutor Co, a Rails App allowing users to book tutoring appointments with local instructors.
 
-* Ruby version
 
-* System dependencies
+## Application Features
 
-* Configuration
+* User can log in with a username and password
+* New user can create an account
+* User can make a reservation
+* User can edit a reservation
+* User can delete a reservation
+* User can edit their profile information
+* User can view instuctor's profiles
+* User can view available subjects
 
-* Database creation
+## Built With
 
-* Database initialization
+* Ruby
+* Rails framework with MVC architecture
+* SQLite3 as the database for Active Record
+* Bootstrap for styling
 
-* How to run the test suite
+## Install Instructions
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Run ```bundle install```
+2. Run ```rails s```
 
-* Deployment instructions
+## Contributing
 
-* ...
+[CONTRIBUTING.md](https://gist.github.com/dbcastillo/75308bee09c36e8e8aedd58a6de0e37f)
+
+## Authors
+
+* **Dena Weiss Neuman**
+* **Cole Tomashot**
+
+## License
+
+[LICENSE.md](LICENSE.md)
