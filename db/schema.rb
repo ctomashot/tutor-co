@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_225655) do
     t.string "name"
     t.string "grade"
     t.integer "location_id"
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

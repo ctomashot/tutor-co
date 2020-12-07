@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :grade
       t.integer :location_id
-      t
+      t.string :img_url
 
       t.timestamps
     end

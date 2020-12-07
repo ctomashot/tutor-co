@@ -24,7 +24,7 @@
 
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
-  <a class="navbar-brand text-warning" href="/">TutorCo</a>
+  <a class="navbar-brand text-warning">TutorCo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -54,7 +54,12 @@
     <div class="text-center text-warning">
       <h2>About Me</h2>
       <br>
-      <div class="fakeimg">My Image</div>
+      <% if @student.img_url.blank? %>
+      <%= image_tag("https://cdn0.iconfinder.com/data/icons/cosmo-user/40/user-512.png", size: "419x300", alt: "Profile Picture") %>
+        <% else %>
+      <%= image_tag(@student.img_url, size: "419x300", alt: "Profile Picture") %>
+      <% end %>
+
       <p></p>
       <hr class="d-sm-none">
     </div>
@@ -65,8 +70,9 @@
       <br>
       <h5 class ="name" > My Username: <%=@student.username%></h5>
       <h5>My Grade: <%=@student.grade%></h5>
+      <h5>My City: <%=@student.location.name%></h5>
       <br>
-      <p>Do you want to <%= link_to "edit", edit_student_path %> your profile?</p>
+      <p>Do you want to <%= link_to "edit", edit_student_path(@student) %> your profile?</p>
 
     </div>
 <br>
@@ -77,14 +83,14 @@
 <% @student.reservations.select do |reservation| %>
     <li>
     <li> Instructor: <%=reservation.instructor.name%></li>
-    <li> Location: <%=reservation.student.location.name%></li>
+    <li> Location: <%=reservation.instructor.location.name%></li>
     <li>Date: <%=reservation.date%></li>
     <li>Time: <%=reservation.time%></li>
-    <li>Room Number: <%=reservation.room_id%></li>
+    <li>Room Number: <%=reservation.room.number%></li>
     <br></br>
     <%= button_to "Cancel Reservation", reservation_path(reservation), method: :delete %>
     <br>
-    <%= button_to "Edit Reservation", edit_reservation_path(reservation)%>
+    <%= link_to "Edit Reservation", edit_reservation_path(reservation)%>
     </li>
     <br>
     <% end %>

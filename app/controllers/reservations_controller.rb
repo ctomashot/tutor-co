@@ -20,10 +20,14 @@ class ReservationsController < ApplicationController
 
     def edit
         @reservation = Reservation.find(params[:id])
+        @my_instructor = Instructor.where(location_id: current_user.location_id)
+        @my_instructor.name 
     end
 
     def update
         @reservation = Reservation.find(params[:id])
+        @my_instructor = Instructor.where(location_id: current_user.location_id)
+        @my_instructor.name 
         if @reservation.update(reservation_params)
             redirect_to student_path(@reservation.student_id)
         else

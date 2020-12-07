@@ -10,4 +10,10 @@ class Instructor < ApplicationRecord
     def instructor_subject
         "#{name} - #{subject} - #{price}"
     end
+
+    def self.instructor_of_the_month
+        self.all.max_by do |instructor|
+            instructor.reservations.size
+        end
+    end
 end

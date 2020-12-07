@@ -30,8 +30,8 @@
     <% end %>
    </ul>
 
-<nav class="new-student text-left text-dark px-3 mt-5 ml-5">
-<h2> Finish Setting Up Your Account...</h2>
+<nav class="edit-student text-left text-dark px-3 mt-5 ml-5">
+<h2> Edit Your Account...</h2>
 <br></br>
 
 
@@ -49,6 +49,11 @@
     <div class="form-group">
     <%= f.label "location:" %>
     <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
+    </div>
+    <br>
+    <div class="form-group">
+    <%= f.label "Profile Picture URL:" %>
+    <%= f.text_field :img_url %>
     </div>
     <br>
     <div class="form-group">
@@ -73,8 +78,6 @@
     <br>
     
     
-    <div class="bg-seconday text-center fixed-bottom" style="margin-bottom:0">
-    <p>TutorCo</p>
-    </div>
+   
 
     </nav>
