@@ -14,7 +14,8 @@ Tutor Co, a Rails App allowing users to book tutoring appointments with local in
 * User can edit a reservation
 * User can delete a reservation
 * User can edit their profile information
-* User can view instuctor's profiles
+* User can view all instuctors
+* User can view an instuctor's profile
 * User can view available subjects
 
 ## Built With
