@@ -3,8 +3,12 @@
 <div class="text-warning">
 <h2>Our Centers</h2>
 </div>
+<div class="text-center text-secondary border border-warning ml-auto">
+<h5> Hours of Instruction </h5>
+<h6> Sun-Sat, 9AM-5PM </h6>
+</div>
 <br>
-
+<div class="text-secondary">
 <ul>
 <%@locations.each do |location| %>
     <li><%= location.name %></li>
@@ -19,4 +23,5 @@
     <br>
     <% end %>
     </ul>
+    </div>
   
