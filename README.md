@@ -1,5 +1,5 @@
 # Link to Demo Video
-*  https://flatiron-school.slack.com/files/U01BN6BQL81/F01GCED8PGT/tutorco_demo.mp4
+*  
 
 # Tutor Co
 
