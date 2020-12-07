@@ -14,9 +14,9 @@ class SessionsController < ApplicationController
      
      if @student.try(:authenticate, params[:password])
        session[:student_id] = @student.id
-       redirect_to student_path(@student)
+       redirect_to @student
      else
-       redirect_to login_path
+       render :new
      end
     end
   

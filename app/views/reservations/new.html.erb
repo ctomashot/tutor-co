@@ -24,9 +24,6 @@
     <br>
     <div class="form-group">
     <%= f.label :instructor_and_subject%>
-    </div>
-    <br>
-    <div class="form-group">
     <%= f.collection_select :instructor_id, @my_instructor, :id, :instructor_subject, prompt: true %>
     </div>
     <br>

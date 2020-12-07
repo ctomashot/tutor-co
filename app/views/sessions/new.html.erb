@@ -7,17 +7,17 @@
   <h2><div class="card-body font-weight-bold pl-5">Sign In</div></h2>
 <br></br>
   <div class="form-group font-weight-bold">
-  <%= form_tag new_session_path do %>
+  <%= form_tag '/login' do %>
 
-      <%= label_tag "Username" %>
-      <%= text_field_tag :username %>
-      <br>
-      <%= label_tag "Password" %>
-      <%= password_field_tag :password %>
-    <br></br>
-    <div class="text-center pl-5">
+    <%= label_tag "Username" %>
+    <%= text_field_tag :username %>
+    <br>
+    <%= label_tag "Password" %>
+    <%= password_field_tag :password %>
+  <br></br>
+    <a type="button" class="btn btn-warning btn-lg mt-5 ml-5 pl-5 pr-5 font-weight-bold text-center" role="button"><%=submit_tag "Sign In"%></a>
+  
 
-<a href="/students/:id" type="button" class="btn btn-warning btn-lg mt-5 pl-5 pr-5 font-weight-bold" role="button" >Sign In</a>
 
 </div>
     <% end %>

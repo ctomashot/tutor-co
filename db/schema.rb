@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_225655) do
     t.integer "experience"
     t.string "subject"
     t.integer "location_id"
+    t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_225655) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "date"
-    t.integer "time"
+    t.string "time"
     t.integer "student_id"
     t.integer "instructor_id"
     t.integer "room_id"

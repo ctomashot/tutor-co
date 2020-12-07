@@ -8,6 +8,6 @@ class Instructor < ApplicationRecord
     validates :experience, numericality: { greater_than: 0, less_than: 11} 
 
     def instructor_subject
-        "#{name} - #{subject}"
+        "#{name} - #{subject} - #{price}"
     end
 end

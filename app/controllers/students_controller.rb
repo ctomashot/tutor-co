@@ -48,4 +48,5 @@ class StudentsController < ApplicationController
         params.require(:student).permit(:name, :username, :grade, :location_id, :password, :password_confirmation)
     end
 
+
 end

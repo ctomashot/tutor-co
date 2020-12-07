@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TutorCo SignUp</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-warning navbar-dark justify-content-center">
+  <a class="navbar-brand" href="/">TutorCo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+</nav>
+
+
+
 <ul>
 <% if @student.errors.any? %>
 <h3> Errors: </h3>
@@ -7,20 +30,51 @@
     <% end %>
    </ul>
 
-
-<h2> Edit your profile </h2>
+<nav class="new-student text-left text-dark px-3 mt-5 ml-5">
+<h2> Finish Setting Up Your Account...</h2>
+<br></br>
 
 
 <%= form_for @student do |f| %>
-    <%= f.label :name %>
+  <div class="form-group">
+    <%= f.label "name:" %>
     <%= f.text_field :name %>
+    </div>
     <br>
-    <%= f.label :grade %>
+    <div class="form-group">
+    <%= f.label "grade:" %>
     <%= f.select :grade, ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th", "College Freshman", "College Sophomore", "College Junior", "College Senior"], prompt: true %>
+    </div>
     <br>
-    <%= f.label :location %>
+    <div class="form-group">
+    <%= f.label "location:" %>
     <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
-    <br></br>
+    </div>
+    <br>
+    <div class="form-group">
+    <%= f.label "username:" %>
+    <%= f.text_field :username %>
+    </div>
+    <br>
+    <div class="form-group">
+    <%= f.label "password:" %>
+    <%= f.password_field :password %>
+    </div>
+    <br>
+    <div class="form-group">
+    <%= f.label "password_confirmation:" %>
+    <%= f.password_field :password_confirmation %>
+    </div>
+    <br>
+    <div class="form-group">
     <%= f.submit %>
     <% end %>
+    </div>
     <br>
+    
+    
+    <div class="bg-seconday text-center fixed-bottom" style="margin-bottom:0">
+    <p>TutorCo</p>
+    </div>
+
+    </nav>

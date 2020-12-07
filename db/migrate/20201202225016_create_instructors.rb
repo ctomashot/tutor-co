@@ -6,6 +6,7 @@ class CreateInstructors < ActiveRecord::Migration[6.0]
       t.integer :experience
       t.string :subject
       t.integer :location_id
+      t.string :price
 
       t.timestamps
     end
