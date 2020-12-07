@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Personal Page</title>
+  <title>TutorCo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,11 +18,11 @@
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Welcome to <%= @student.name%>'s Personal Page!</h1>
+  <h1><%= @student.name%>'s Personal Page!</h1>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
-  <a class="navbar-brand" href="/">TutorCo</a>
+  <a class="navbar-brand text-warning" href="/">TutorCo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,38 +35,37 @@
       <a class="nav-link" href="/subjects">Subjects</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="/students">students</a>
+      <a class="nav-link" href="/instructors">Instructors</a>
       </li>    
     </ul>
   </div>  
 </nav>
 
+
 <div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
+    <div class="text-center">
       <h2>About Me</h2>
-      <h5>Photo of me:</h5>
+      <br>
       <div class="fakeimg">Fake Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <p></p>
       <hr class="d-sm-none">
     </div>
-    <div class="col-sm-8">
+    <div class="text-center border border-warning">
       <h2>Bio</h2>
       <h5>Get to know me...</h5>
       <br>
-      <p>Hello, my name is <%=@student.name%>!</p>
-      <p><%=@student.username%></p>
+      <p class ="name" >Username: <%=@student.username%></p>
       <p>I have <%=@student.grade%> years of experience teaching <%=@student.grade%>.</p>
       <p>If you are in need of some help in my field, book a <%=link_to "Reservation", new_reservation_path %> with me!</p>
       <br>
       <h2>My City</h2>
-      <h5><%=@student.location.name%></h5>
+      <h5><%my_location = @student.location%></h5>
       <div class="fakeimg">Fake Image</div>
       <p>The best city..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     </div>
-  </div>
 </div>
+
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>TutorCo</p>

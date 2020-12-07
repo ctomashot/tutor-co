@@ -6,17 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top px-3">
+  <a class="navbar-brand text-warning" href="/">TutorCo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+</nav>
     <div class="container-fluid">
       <% if @student %>
       <%= button_to "Logout", sessions_path, method: :delete %>
-      <% else %>
-      <%= button_to "Login", login_path, method: :get %>
       <% end %>
+
+      <div class="jumbotron text-center fixed-bottom" style="margin-bottom:0">
+      <p>TutorCo</p>
+      </div>
         <%= yield %>
     </div>
   </body>

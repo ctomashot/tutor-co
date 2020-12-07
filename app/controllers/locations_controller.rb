@@ -3,5 +3,6 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all
+        @instructors = Instructor.all
     end
 end

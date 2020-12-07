@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
    
   
     def new
-      render :layout => false
+      render :layout => 'application'
       @student = Student.new
 
     end

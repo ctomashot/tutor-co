@@ -20,7 +20,7 @@
     <br>
     <%= f.label :instructor_and_subject%>
     <br>
-    <%= f.collection_select :instructor_id, Instructor.all, :id, :instructor_subject, prompt: true %>
+    <%= f.collection_select :instructor_id, @my_instructor, :id, :instructor_subject, prompt: true %>
     <br>
     <br>
     <%= f.label :room %>

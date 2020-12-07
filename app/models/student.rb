@@ -9,6 +9,5 @@ class Student < ApplicationRecord
     validates :name, :grade, :location, :username, :password, presence: true
     validates :username, uniqueness: true
   
-    
 
 end

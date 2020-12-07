@@ -1,13 +1,24 @@
-Login Page 
+<div class="text-center pt-5">
+<div class="card bg-warning">
+    <div class="card-body text-center">
+<div class="card">
+  <div class="card-body">Sign In</div>
 
-<%= form_tag new_session_path do %>
+  <div class="form-group">
+  <%= form_tag new_session_path do %>
 
-    <%= label_tag "Username" %>
-    <%= text_field_tag :username %>
-    <%= label_tag "Password" %>
-    <%= password_field_tag :password %>
-  
-    <%= submit_tag "Sign In"%>
-  <% end %>
+      <%= label_tag "Username" %>
+      <%= text_field_tag :username %>
+      <%= label_tag "Password" %>
+      <%= password_field_tag :password %>
+    <br></br>
+      <%= submit_tag "Sign In"%>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
 
 <%= button_to "Homepage", root_path, method: :get %>

@@ -7,4 +7,7 @@ class Reservation < ApplicationRecord
     validates :date, timeliness: { on_or_after: lambda { Date.current }, type: :date }
   
    validates :time, uniqueness: { scope: [:date, :room_id] }
+
+
+
 end

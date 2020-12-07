@@ -4,6 +4,8 @@ class ReservationsController < ApplicationController
 
     def new
         @reservation = Reservation.new
+        @my_instructor = Instructor.where(location_id: current_user.location_id)
+        @my_instructor.name 
     end
 
     def create

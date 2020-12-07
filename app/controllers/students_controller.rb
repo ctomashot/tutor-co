@@ -5,10 +5,12 @@ class StudentsController < ApplicationController
     def show
         @student = current_user
         render :layout => "students"
+
     end    
    
     def new
         @student = Student.new
+        render :layout => false
     end
 
     def create
@@ -35,7 +37,8 @@ class StudentsController < ApplicationController
     end
 
     def homepage
-        render :layout => "application"
+  
+        render :layout => false
         
     end
 
