@@ -18,8 +18,10 @@
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <h1><%= @student.name%>'s Personal Page!</h1>
+  <h1><%= @student.name%>'s Profile!</h1>
 </div>
+
+
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
   <a class="navbar-brand text-warning" href="/">TutorCo</a>
@@ -36,35 +38,42 @@
       </li>
       <li class="nav-item">
       <a class="nav-link" href="/instructors">Instructors</a>
-      </li>    
+      </li>  
+      <li class="nav-item">
+      <a class="nav-link" href="/reservations/new">Book</a>
+      </li>  
+      
     </ul>
+  <%= button_to "Logout", sessions_path, method: :delete %>
   </div>  
 </nav>
 
 
-<div class="container" style="margin-top:30px">
-    <div class="text-center">
+
+    <div class="container" style="margin-top:30px"> 
+    <div class="text-center text-warning">
       <h2>About Me</h2>
       <br>
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg">My Image</div>
       <p></p>
       <hr class="d-sm-none">
     </div>
+
     <div class="text-center border border-warning">
-      <h2>Bio</h2>
-      <h5>Get to know me...</h5>
       <br>
-      <p class ="name" >Username: <%=@student.username%></p>
-      <p>I have <%=@student.grade%> years of experience teaching <%=@student.grade%>.</p>
-      <p>If you are in need of some help in my field, book a <%=link_to "Reservation", new_reservation_path %> with me!</p>
+      <h4>Get to know me...</h4>
       <br>
-      <h2>My City</h2>
-      <h5><%my_location = @student.location%></h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>The best city..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h5 class ="name" > My Username: <%=@student.username%></h5>
+      <h5>My Grade: <%=@student.grade%></h5>
+      <br>
+      <h5>My City:</h5>
+      <h5><%=@student.location.name%></h5>
+      <br>
+      <p><%=link_to "Book", new_reservation_path %> a tutoring reservation.</p>
     </div>
 </div>
+<br>
+
 
 
 <div class="jumbotron text-center" style="margin-bottom:0">

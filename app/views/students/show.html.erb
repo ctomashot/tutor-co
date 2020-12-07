@@ -1,12 +1,84 @@
-<h3><%= @student.name %>'s show page!</h3>
-<h3>I am studying in <%=@student.location%> </h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TutorCo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body>
 
-<h3>Your reservations</h3>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1><%= @student.name%>'s Profile!</h1>
+</div>
 
-<ol>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
+  <a class="navbar-brand text-warning" href="/">TutorCo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      <a class="nav-link" href="/locations">Locations</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/subjects">Subjects</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/instructors">Instructors</a>
+      </li>  
+      <li class="nav-item">
+      <a class="nav-link" href="/reservations/new">Book</a>
+      </li>  
+      
+    </ul>
+  <%= button_to "Logout", sessions_path, method: :delete %>
+  </div>  
+</nav>
+
+
+
+    <div class="container" style="margin-top:30px"> 
+    <div class="text-center text-warning">
+      <h2>About Me</h2>
+      <br>
+      <div class="fakeimg">My Image</div>
+      <p></p>
+      <hr class="d-sm-none">
+    </div>
+
+    <div class="text-center border border-warning">
+      <br>
+      <h4>Get to know me...</h4>
+      <br>
+      <h5 class ="name" > My Username: <%=@student.username%></h5>
+      <h5>My Grade: <%=@student.grade%></h5>
+      <br>
+      <h5>My City:</h5>
+      <h5><%=@student.location.name%></h5>
+      <br>
+      <p>Do you want to <%= link_to "edit", edit_student_path %> your profile?</p>
+
+    </div>
+<br>
+    <div class="text-center border border-warning">
+    <h3>My Reservations</h3>
+
+<ul>
 <% @student.reservations.select do |reservation| %>
     <li>
-    <ul>
     <li> Instructor: <%=reservation.instructor.name%></li>
     <li> Location: <%=reservation.student.location.name%></li>
     <li>Date: <%=reservation.date%></li>
@@ -16,14 +88,23 @@
     <%= button_to "Cancel Reservation", reservation_path(reservation), method: :delete %>
     <br>
     <%= button_to "Edit Reservation", edit_reservation_path(reservation)%>
-    
-    </ul>
     </li>
     <br>
     <% end %>
-    </ol>
+    </ul>
+    
 
 
-    <%= link_to "Book a new tutoring session!", new_reservation_path %>
+    <p><%=link_to "Book", new_reservation_path %> a new tutoring reservation.</p>
+
     <br>
-    <%= link_to "Edit Profile", edit_student_path %>
+</div>
+</div>
+<br>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+  <p>TutorCo</p>
+</div>
+
+</body>
+</html>

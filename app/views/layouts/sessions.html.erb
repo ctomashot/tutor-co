@@ -13,20 +13,14 @@
   <nav class="navbar navbar-inverse">
   
 
-    <ul class="navbar-nav ml-auto">
-        <% if @student %>
-        <li><%= button_to "Logout", sessions_path, method: :delete %><span class="glyphicon glyphicon-user"></span></li>
-        <% else %>
-        <li><%= button_to "Login", login_path, method: :get %><span class="glyphicon glyphicon-user"></span></li>
-        <% end %>
-    </ul>
-
 </nav>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top px-3">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-     <a class="navbar-brand text-warning" href="/">TutorCo</a>
-    </li>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
+  <a class="navbar-brand text-warning pl-3" href="/">TutorCo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="/locations">Locations</a>
     </li>
@@ -36,10 +30,26 @@
     <li class="nav-item">
     <a class="nav-link" href="/instructors">Instructors</a>
     </li>
+    <li>
     <a class="nav-link" href="/students/:id">My Profile</a>
     </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/reservations/new">Book</a>
+    </li>  
   </ul>
+  </ul>
+  <ul class="navbar-nav ml-auto mr-3">
+        <% if @student %>
+        <li><%= button_to "Logout", sessions_path, method: :delete %><span class="glyphicon glyphicon-user"></span></li>
+        <% else %>
+        <li><%= button_to "Login", login_path, method: :get %><span class="glyphicon glyphicon-user"></span></li>
+        <% end %>
+    </ul>
+  </div> 
 </nav>
     <%= yield %>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>TutorCo</p>
+</div>
   </body>
 </html>

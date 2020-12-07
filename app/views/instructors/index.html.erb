@@ -1,9 +1,15 @@
-Instructors!!!
+
+<br></br>
+<div class="text-left font-italic ml-5">
+<div class="text-warning">
+<h3>Our Instructors, and the subjects they teach...</h3>
+</div>
+<br>
 <ol>
 <% @instructors.each do |instructor| %>
-    <li><%= link_to instructor.name, instructor_path(instructor) %>
-    <br>
-    <%= instructor.subject %>
-    <br>
+    <li><%= link_to instructor.name, instructor_path(instructor)%> who teaches,
+    <%= instructor.subject %></li>
+    <br></br>
     <% end %>
     </ol>
+    </div>

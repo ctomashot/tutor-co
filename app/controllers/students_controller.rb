@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
     def show
         @student = current_user
-        render :layout => "students"
+        render :layout => false
 
     end    
    
