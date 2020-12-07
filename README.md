@@ -1,7 +1,7 @@
 # Link to Demo Video
 *  
 
-# Tutor co
+# Tutor Co
 
 Tutor Co, a Rails App allowing users to book tutoring appointments with local instructors.
 
