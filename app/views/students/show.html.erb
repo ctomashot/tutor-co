@@ -17,37 +17,37 @@
 </head>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1><%= @student.name%>'s Profile!</h1>
-</div>
 
-
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark stick-top">
-  <a class="navbar-brand text-warning">TutorCo</a>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark stick-top mt-0 mb-0 px-5">
+  <a class="navbar-brand text-warning" href="/"><h3>TutorCo</h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <a class="nav-link" href="/locations">Locations</a>
+      <a class="nav-link" href="/locations"><h5>Locations</h5></a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="/subjects">Subjects</a>
+      <a class="nav-link" href="/subjects"><h5>Subjects</h5></a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="/instructors">Instructors</a>
+      <a class="nav-link" href="/instructors"><h5>Instructors</h5></a>
       </li>  
       <li class="nav-item">
-      <a class="nav-link" href="/reservations/new">Book</a>
+      <a class="nav-link" href="/reservations/new"><h5>Reservations</h5></a>
       </li>  
       
     </ul>
-  <%= button_to "Logout", sessions_path, method: :delete %>
+
+  <%=  button_to "Logout", sessions_path, method: :delete %>
+
   </div>  
 </nav>
 
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1><%= @student.name%>'s Profile!</h1>
+</div>
 
 
     <div class="container" style="margin-top:30px"> 
@@ -104,9 +104,6 @@
 </div>
 <br>
 
-    <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>TutorCo</p>
-</div>
 
 </body>
 </html>

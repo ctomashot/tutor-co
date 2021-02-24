@@ -1,21 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TutorCo</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="view" >
 
 
-<div class="text-center pt-5 pb-5 pr-5 pl-5">
-<div class="card bg-warning">
-    <div class="card-body text-center">
-<div class="card bg-secondary text-white">
-  <h2><div class="card-body font-weight-bold pl-5">Sign In</div></h2>
+
+
+
+<div class="text-center ">
+<div>
+    <div class="card-body bg-warning text-center", style='width: 500px; margin: auto'>
+<div class="card text-dark ">
+  <h2><div class="card-body  font-weight-normal">Please Sign In</div></h2>
 <br></br>
-  <div class="form-group font-weight-bold">
+  <div class="form-group font-weight-normal text-center">
   <%= form_tag '/login' do %>
 
-    <%= label_tag "Username" %>
+    <%= label_tag "Username:" %>
+    <br>
     <%= text_field_tag :username %>
     <br>
-    <%= label_tag "Password" %>
+    <%= label_tag "Password:" %>
+    <br>
     <%= password_field_tag :password %>
   <br></br>
-    <a type="button" class="btn btn-warning btn-lg mt-5 ml-5 pl-5 pr-5 font-weight-bold text-center" role="button"><%=submit_tag "Sign In"%></a>
+    <a type="button" class="btn" role="button"><%=submit_tag "Sign In"%></a>
   
 
 
@@ -28,3 +44,5 @@
 </div>
 
 
+</body>
+</html>
