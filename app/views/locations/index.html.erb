@@ -1,30 +1,31 @@
-<br></br>
-<div class="text-left font-italic ml-5">
-<div class="text-dark bg-warning pt-2 pb-2 pl-1 mr-5">
-<h2>Our Centers</h2>
-</div>
-<br>
-<div class="text-center text-secondary border border-warning w-25 mx-auto pt-3 pb-3">
+
+<div class="text-center  mt-4" style="width: 100%">
+<div class="text-warning bg-light pt-2 pb-2 pl-1">
+<h1>Our Centers</h1>
+<div class="text-center text-secondary  w-25 mx-auto pt-3 pb-3">
 <h5> Hours of Instruction </h5>
 <h6> Sun-Sat, 9AM-5PM </h6>
 </div>
+</div>
 <br>
-<div class="text-secondary">
-<ul>
-<strong>
+
+<br>
+<div class="text-dark font-weight-normal">
+<ul class="list-group ">
+
 <%@locations.each do |location| %>
-    <li><%= location.name %></li>
-    <ul>
-    Instructors in this location:
+    <li style="font-size: 20px" class="list-group-item list-group-item-warning" font-weight-normal"><h3><%= location.name %></h3></li>
+    <ul class="list-group">
+    <h4>Instructors in this location:</h4>
     <%@instructors.each do |instructor|%>
         <%if instructor.location == location%>
-           <li> <%=link_to instructor.name, instructor_path(instructor), style: "color: grey;"%></li>
+           <li style="font-size: 20px" class="list-group-item font-weight-normal"> <%=link_to instructor.name, instructor_path(instructor), style: "color: grey;"%></li>
        <% end%>
     <%end%>
     </ul>
     <br>
     <% end %>
     </ul>
-    </strong>
+
     </div>
   

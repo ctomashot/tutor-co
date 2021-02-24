@@ -8,18 +8,15 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-<body>
+<body class="view" >
 
+<div class="text-center ">
+<div>
+    <div class="card-body bg-warning text-center", style='width: 500px;  margin: auto'>
+<div class="card text-dark ">
+  <h2><div class="card-body font-weight-normal ">Please Register</div></h2>
 
-<nav class="navbar navbar-expand-sm bg-warning navbar-dark justify-content-center">
-  <a class="navbar-brand" href="/">TutorCo</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- 
-</nav>
-
-
+  <div class="form-group font-weight-normal text-center">
 
 <ul>
 <% if @student.errors.any? %>
@@ -30,56 +27,61 @@
     <% end %>
    </ul>
 
-<nav class="new-student text-left text-dark px-3 mt-5 ml-5">
-<h2> Finish Setting Up Your Account...</h2>
-<br></br>
+   <div class="form-group font-weight-normal text-center">
+
 
 
 <%= form_for @student do |f| %>
-  <div class="form-group">
+  
     <%= f.label "name:" %>
+    <br>
     <%= f.text_field :name %>
-    </div>
+  
     <br>
-    <div class="form-group">
+    
     <%= f.label "grade:" %>
+    <br>
     <%= f.select :grade, ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th", "College Freshman", "College Sophomore", "College Junior", "College Senior"], prompt: true %>
-    </div>
+   
     <br>
-    <div class="form-group">
+    
     <%= f.label "location:" %>
+    <br>
     <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
-    </div>
+
     <br>
-    <div class="form-group">
+    
     <%= f.label "Profile Picture URL:" %>
+    <br>
     <%= f.text_field :img_url %>
-    </div>
+ 
     <br>
-    <div class="form-group">
+    
     <%= f.label "username:" %>
+    <br>
     <%= f.text_field :username %>
-    </div>
+
     <br>
-    <div class="form-group">
+    
     <%= f.label "password:" %>
+    <br>
     <%= f.password_field :password %>
-    </div>
+
     <br>
-    <div class="form-group">
+    
     <%= f.label "password_confirmation:" %>
-    <%= f.password_field :password_confirmation %>
-    </div>
     <br>
-    <div class="form-group">
+    <%= f.password_field :password_confirmation %>
+
+    <br>
+    </br>
     <%= f.submit %>
     <% end %>
-    </div>
+   
     <br>
     
     
-    <div class="bg-seconday text-center fixed-bottom" style="margin-bottom:0">
-    <p>TutorCo</p>
-    </div>
+   
 
-    </nav>
+</body>
+</html>

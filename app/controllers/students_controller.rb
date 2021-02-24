@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
    
     def new
         @student = Student.new
-        render :layout => false
+        render :layout => "application"
     end
 
     def create
