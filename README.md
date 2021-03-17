@@ -1,3 +1,5 @@
+![](https://github.com/denaweiss5/tutor-co/blob/main/public/ezgif.com-gif-maker%20(2).gif)
+
 # Link to Demo Video
 *  https://youtu.be/rMW-a3ftwqE
 
